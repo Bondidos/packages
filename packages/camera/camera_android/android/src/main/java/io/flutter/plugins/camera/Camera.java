@@ -1223,6 +1223,7 @@ class Camera
   synchronized void closeCaptureSession() {
     if (captureSession != null) {
       Log.i(TAG, "closeCaptureSession");
+      Log.i("FIXEDMETHOD", "closeCaptureSession");
 
       captureSession.close();
       captureSession = null;
@@ -1231,6 +1232,7 @@ class Camera
 
   synchronized public void close() {
     Log.i(TAG, "close");
+    Log.i("FIXEDMETHOD", "close");
 
     stopAndReleaseCamera();
 
@@ -1252,6 +1254,7 @@ class Camera
   }
 
   synchronized private void stopAndReleaseCamera() {
+    Log.i("FIXEDMETHOD", "stopAndReleaseCamera");
     if (cameraDevice != null) {
       cameraDevice.close();
       cameraDevice = null;
